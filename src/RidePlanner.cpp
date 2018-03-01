@@ -9,61 +9,28 @@ void RidePlanner::ReadFromStdin()
 {
     int a, b, x, y, s, f;
 
-    std::cin >> rows >> columns >> vehiclesCount >> rides >> bonus >> time;
+    std::cin >> rows >> columns >> vehiclesCount >> ridesCount >> bonus >> time;
 
 
 
-    for (int i = 0; i < rides; ++i) {
-        std::cin >> a >> b >> x >> y >> s >> f;
-        Rides.push_back(std::shared_ptr<Ride>(new Ride(a, b, x, y, s, f)));
+    for (int i = 0; i < vehiclesCount; ++i) {
+        Vehicles.emplace_back(std::vector<int>());
     }
-//
-//    for (int i = 0; i < VideosCount; ++i)
-//    {
-//        std::cin >> size;
-//        Videos.push_back(std::shared_ptr<Video>(new Video(i, size)));
-//    }
-//
-//    for (int i = 0; i < EndpointsCount; ++i) {
-//        std::cin >> latency >> size;
-//        std::shared_ptr<Endpoint> endpoint(new Endpoint(latency));
-//
-//        for (int j = 0; j < size; ++j)
-//        {
-//            std::cin >> cacheId >> latency;
-//            endpoint->AddCacheConnection(cacheId, latency);
-//            Caches[cacheId]->AddEndpoint();
-//        }
-//        Endpoints.push_back(std::move(endpoint));
-//    }
-//
-//    for (int i = 0; i < RequestsCount; ++i)
-//    {
-//        std::cin >> videoId >> endpointId >> requests;
-//        Endpoints[endpointId]->AddRequest(videoId, requests);
-//        Videos[videoId]->AddEndpointWhichAsksFor(endpointId, requests);
-//    }
-//
 
+    for (int i = 0; i < ridesCount; ++i) {
+        std::cin >> a >> b >> x >> y >> s >> f;
+        Rides.push_back(std::make_shared<Ride>(a, b, x, y, s, f));
+    }
 }
 
 void RidePlanner::PrintResult() {
 
-    std::cout << "ppp" << "\n";
-
-//    int count = 0;
-//    for (int i = 0; i < CacheCount; ++i) {
-//        if (!Caches[i]->videos.empty())
-//            count++;
-//    }
-//    std::cout << count << "\n";
-//    for (int i = 0; i < CacheCount; ++i) {
-//        if (Caches[i]->videos.empty())
-//            continue;
-//        std::cout << i;
-//        for (int video : Caches[i]->videos)
-//            std::cout << " " << Videos[video]->number;
-//        std::cout << "\n";
-//    }
+    for (int i = 0; i < vehiclesCount; i++) {
+        std::cout << Vehicles[i].size() << " ";
+        for (int j = 0; j < Vehicles[i].size(); j++) {
+            std::cout << Vehicles[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
 }
 

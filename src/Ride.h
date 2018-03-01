@@ -5,6 +5,7 @@
 #ifndef GHC18_RIDE_H
 #define GHC18_RIDE_H
 
+#include <memory>
 
 
 class Ride {

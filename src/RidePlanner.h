@@ -15,16 +15,12 @@ public:
     int rows;
     int columns;
     int vehiclesCount;
-    int rides;
+    int ridesCount;
     int bonus;
     int time;
 
     std::vector<std::shared_ptr<Ride> > Rides;
     std::vector<std::vector<int> > Vehicles;
-
-//        std::vector<std::shared_ptr<Video> > Videos;
-//        std::vector<std::shared_ptr<Endpoint> > Endpoints;
-//        std::vector<std::shared_ptr<Cache> > Caches;
 
     void ReadFromStdin();
     void PrintResult();
