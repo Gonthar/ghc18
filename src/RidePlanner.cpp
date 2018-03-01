@@ -2,10 +2,10 @@
 // Created by maciek on 01.03.18.
 //
 
-#include "GoogleFactory.h"
+#include "RidePlanner.h"
 #include <iostream>
 
-void GoogleFactory::ReadFromStdin()
+void RidePlanner::ReadFromStdin()
 {
     std::cin >> DataString;
 
@@ -42,7 +42,7 @@ void GoogleFactory::ReadFromStdin()
 
 }
 
-void GoogleFactory::PrintResult() {
+void RidePlanner::PrintResult() {
 
     std::cout << DataString << "\n";
 

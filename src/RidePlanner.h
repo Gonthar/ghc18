@@ -7,7 +7,7 @@
 
 #include <string>
 
-class GoogleFactory {
+class RidePlanner {
 public:
     std::string DataString;
 
@@ -17,9 +17,9 @@ public:
 
     void ReadFromStdin();
     void PrintResult();
-    static GoogleFactory& GetInstance()
+    static RidePlanner& GetInstance()
     {
-        static GoogleFactory instance;
+        static RidePlanner instance;
         return instance;
     }
 

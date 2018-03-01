@@ -1,13 +1,13 @@
 #include <iostream>
-#include "GoogleFactory.h"
+#include "RidePlanner.h"
 
 int main() {
     long long score = 0;
 
-    GoogleFactory::GetInstance().ReadFromStdin();
-    GoogleFactory& gf = GoogleFactory::GetInstance();
+    RidePlanner::GetInstance().ReadFromStdin();
+    RidePlanner& rp = RidePlanner::GetInstance();
 
-    gf.PrintResult();
+    rp.PrintResult();
     std::cout << "\n" << "score: " << score << "\n";
     return 0;
 }
