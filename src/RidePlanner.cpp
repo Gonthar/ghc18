@@ -7,11 +7,16 @@
 
 void RidePlanner::ReadFromStdin()
 {
-    std::cin >> DataString;
+    int a, b, x, y, s, f;
 
-//    for (int i = 0; i < CacheCount; ++i) {
-//        Caches.push_back(std::shared_ptr<Cache>(new Cache(i, CacheSize)));
-//    }
+    std::cin >> rows >> columns >> vehiclesCount >> rides >> bonus >> time;
+
+
+
+    for (int i = 0; i < rides; ++i) {
+        std::cin >> a >> b >> x >> y >> s >> f;
+        Rides.push_back(std::shared_ptr<Ride>(new Ride(a, b, x, y, s, f)));
+    }
 //
 //    for (int i = 0; i < VideosCount; ++i)
 //    {
@@ -44,7 +49,7 @@ void RidePlanner::ReadFromStdin()
 
 void RidePlanner::PrintResult() {
 
-    std::cout << DataString << "\n";
+    std::cout << "ppp" << "\n";
 
 //    int count = 0;
 //    for (int i = 0; i < CacheCount; ++i) {

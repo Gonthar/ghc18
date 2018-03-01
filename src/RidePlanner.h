@@ -5,11 +5,22 @@
 #ifndef GHC18_GOOGLEFACTORY_H
 #define GHC18_GOOGLEFACTORY_H
 
+#include "Ride.h"
 #include <string>
+#include <bits/shared_ptr.h>
+#include <vector>
 
 class RidePlanner {
 public:
-    std::string DataString;
+    int rows;
+    int columns;
+    int vehiclesCount;
+    int rides;
+    int bonus;
+    int time;
+
+    std::vector<std::shared_ptr<Ride> > Rides;
+    std::vector<std::vector<int> > Vehicles;
 
 //        std::vector<std::shared_ptr<Video> > Videos;
 //        std::vector<std::shared_ptr<Endpoint> > Endpoints;
